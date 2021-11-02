@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Ready</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <!-- <form id="text" name="text" method="get" action="出校通行证(2分钟内有效).html">
+学院： <input name="college" type="text" size="30" /><br />
+姓名： <input name="name" type="text" size="30" /><br />
+学号： <input name="sid" type="text" size="30" /><br />
+<input name="save" type="submit" value="提交" /> -->
+    <input name="college" type="text" size="30" placeholder="学院" /><br />
+    <input name="name" type="text" size="30" placeholder="姓名" /><br />
+    <input name="sid" type="text" size="30" placeholder="学号" /><br />
+    <button type="button">出校</button>
+    <button type="button">入校</button>
+    <script>
+        var bts = document.getElementsByTagName('button')
+        var inputs = document.getElementsByTagName('input')
+        // console.log(inputs)
+        // console.log(inputs[0].name)
+        // console.log(inputs[0].value)
+        // console.log(bts)
+
+        out = bts[0]
+        back = bts[1]
+        out.addEventListener('click', function () {
+            var para = inputs[0].name + '=' + inputs[0].value + '&' +
+                inputs[1].name + '=' + inputs[1].value + '&' +
+                inputs[2].name + '=' + inputs[2].value
+            console.log(para)
+            var herf = '出校通行证(2分钟内有效).html?' + para
+            window.location.href = herf
+            console.log(herf)
+
+        })
+        back.addEventListener('click', function () {
+            var para = inputs[0].name + '=' + inputs[0].value + '&' +
+                inputs[1].name + '=' + inputs[1].value + '&' +
+                inputs[2].name + '=' + inputs[2].value
+            console.log(para)
+            var herf = '返校通行证(2分钟内有效).html?' + para
+            window.location.href = herf
+            console.log(666)
+        })
+    </script>
+    <!-- 自适应与手机 -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- 检测手机访问 -->
+    <script>
+        //平台、设备和操作系统
+        var system = { win: false, mac: false, xll: false };
+        //检测平台
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+        if (!system.win && !system.mac && !system.xll) {
+            // alert('手机访问');
+        }
+    </script>
+</body>
+
+</html>
